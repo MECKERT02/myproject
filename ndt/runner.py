@@ -12,15 +12,13 @@ if __name__ == '__main__':
     try:
         load_dotenv()
         ndtargs = config.get_parser()
-        #print(args)
         cfg = config.get_config(ndtargs)
-        #print(cfg)
         logcfg=logging_config.initialize_logging(cfg)
-        #logging_config.initialize_logging(cfg)
         logger.debug("Command line args: %s", ndtargs)
         logger.debug("Logger Configuration: %s", logcfg)
         logger.debug("App Configuration: %s", cfg)
-
+        logger.info("check fo updates in %s", cfg["input_csv"])
+        
         ndt_crawler(ndtargs, cfg)
     except FileNotFoundError as e:
         logger.critical("File not found: %s", e)
