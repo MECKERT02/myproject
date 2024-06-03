@@ -76,6 +76,7 @@ def get_loggers():
 
     return {
         "runner": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
+        "ndt_crawler": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
         "sql_io": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
         "models": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
         "logging_config": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
@@ -100,13 +101,16 @@ def configure_logging(cfg):
         "loggers": get_loggers(),
     }
     logging.config.dictConfig(logging_config)
+    #logger.debug(logging_config)
+    return logging_config
 
 def initialize_logging(ndtargs, cfg):
     """
     Initialize logging for the application.
     """
-    configure_logging(cfg)
+    logcfg=configure_logging(cfg)
+    return logcfg
     #logger.debug("NR Host Schema: %s", Host.schema())
-    logger.critical("Passed Arguments: %s", ndtargs)
-    logger.error("Passed Arguments: %s", ndtargs)
+    #logger.critical("Passed Arguments: %s", ndtargs)
+    #logger.error("Passed Arguments: %s", ndtargs)
     #logger.debug("SqlAlchemy Version: %s", sqlalchemy.__version__)

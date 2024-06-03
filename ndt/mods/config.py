@@ -36,7 +36,7 @@ def get_config():
     """
     cfg = configparser.ConfigParser()
     config_file = construct_path('data\\config', 'config.ini')
-    print(config_file)
+    #print(config_file)
     cfg.read(config_file)
     logging_level = cfg.get('logging', 'level')
 

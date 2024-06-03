@@ -4,6 +4,7 @@ import logging
 from dotenv import load_dotenv
 from mods import config
 from mods import logging_config
+from ndt_crawler import ndt_crawler
 
 logger = logging.getLogger("runner")
 
@@ -13,8 +14,12 @@ if __name__ == '__main__':
     #print(args)
     cfg = config.get_config()
     #print(cfg)
-    logging_config.initialize_logging(ndtargs, cfg)
+    logcfg=logging_config.initialize_logging(ndtargs, cfg)
     #logging_config.initialize_logging(cfg)
-    logger.info("Command line args: %s", ndtargs)
-    logger.info("Configuration: %s", cfg)
+    logger.debug("Command line args: %s", ndtargs)
+    logger.debug("Logger Configuration: %s", logcfg)
+    logger.debug("App Configuration: %s", cfg)
+
+    ndt_crawler(ndtargs, cfg, logcfg)
+
     print("hello")
