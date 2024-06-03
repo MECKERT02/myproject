@@ -1,3 +1,5 @@
 .venv
 .git
 tmp.txt
+*pyc
+__pycache__

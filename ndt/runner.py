@@ -1,12 +1,13 @@
 """ NDT Runner
 """
 from dotenv import load_dotenv
-
-def main():
-    """ NDT Runner Main
-    """
-    load_dotenv()
-    print("hello")
+from mods import config
 
 if __name__ == '__main__':
-    main()
+    load_dotenv()
+    args = config.get_parser()
+    print(args)
+    cfg = config.get_config()
+    print(cfg)
+
+    print("hello")
