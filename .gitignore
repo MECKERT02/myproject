@@ -3,5 +3,8 @@
 tmp.txt
 *pyc
 __pycache__
+*.sqlite
 *.log
-config.ini
+**\config.ini
+**\import
+**\export
