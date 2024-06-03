@@ -33,14 +33,14 @@ def get_formatters():
         },
     }
 
-def get_handlers():
+def get_handlers(cfg):
     """ get_handlers
     """
 
     return {
         "stdout": {
             "class": "logging.StreamHandler",
-            "level": config["logging_level"],
+            "level": cfg["logging_level"],
             "formatter": "colored",
             "stream": "ext://sys.stdout"
         },
@@ -48,13 +48,13 @@ def get_handlers():
             "class": "logging.FileHandler",
             "level": "ERROR",
             "formatter": "verbose",
-            "filename": config["error_file"],
+            "filename": cfg["error_file"],
             "mode": "w"
         },
         "file": {
             "class": "logging.FileHandler",
             "formatter": "verbose",
-            "filename": config["logging_file"],
+            "filename": cfg["logging_file"],
             "mode": "w"
         },
         "console2": {
@@ -63,7 +63,7 @@ def get_handlers():
         },
         "file2": {
             "class": "logging.FileHandler",
-            "filename": config["logging_file"],
+            "filename": cfg["logging_file"],
             "formatter": "verbose",
             "level": "DEBUG",
             "mode": "w"
@@ -88,7 +88,7 @@ def get_loggers():
         },
     }
 
-def configure_logging():
+def configure_logging(cfg):
     """
     Configure the logging settings for the application.
     """
@@ -96,17 +96,17 @@ def configure_logging():
         "version": 1,
         "disable_existing_loggers": False,
         "formatters": get_formatters(),
-        "handlers": get_handlers(),
+        "handlers": get_handlers(cfg),
         "loggers": get_loggers(),
     }
     logging.config.dictConfig(logging_config)
     pass
 
-def initialize_logging():
+def initialize_logging(cfg):
     """
     Initialize logging for the application.
     """
-    configure_logging()
-    logger.debug("NR Host Schema: %s", Host.schema())
-    logger.debug("Passed Arguments: %s", config.ndtargs)
-    logger.debug("SqlAlchemy Version: %s", sqlalchemy.__version__)
+    configure_logging(cfg)
+    #logger.debug("NR Host Schema: %s", Host.schema())
+    #logger.debug("Passed Arguments: %s", config.ndtargs)
+    #logger.debug("SqlAlchemy Version: %s", sqlalchemy.__version__)
