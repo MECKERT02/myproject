@@ -4,7 +4,7 @@ import logging
 import logging.config
 from colorlog import ColoredFormatter
 
-from mods import config
+#from mods import config
 
 logger = logging.getLogger("logging_config")
 
@@ -20,7 +20,9 @@ def get_formatters():
         },
         "colored": {
             "()": ColoredFormatter,
-            "format": "%(log_color)s%(asctime)s %(name)s:%(levelname)-8s%(reset)s %(blue)s%(message)s _.(%(lineno)d)",
+            "format": 
+                "%(log_color)s%(asctime)s %(name)s:"+
+                "%(levelname)-8s%(reset)s %(blue)s%(message)s _.(%(lineno)d)",
             "datefmt": "%m-%d %H:%M:%S",
             "reset": True,
             "log_colors": {
@@ -100,7 +102,6 @@ def configure_logging(cfg):
         "loggers": get_loggers(),
     }
     logging.config.dictConfig(logging_config)
-    pass
 
 def initialize_logging(cfg):
     """
