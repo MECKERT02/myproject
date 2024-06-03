@@ -4,8 +4,6 @@ import logging
 import logging.config
 from colorlog import ColoredFormatter
 
-#from mods import config
-
 logger = logging.getLogger("logging_config")
 
 def get_formatters():
@@ -30,7 +28,7 @@ def get_formatters():
                 "INFO": "green",
                 "WARNING": "yellow",
                 "ERROR": "red",
-                "CRITICAL": "red",
+                "CRITICAL": "red,bg_white"
             },
         },
     }
@@ -77,12 +75,12 @@ def get_loggers():
     """
 
     return {
-        "ndt": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
-        "mysql_io": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
-        "mymodels": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
-        "mylog": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
-        "myconfig": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
-        "myfile_io": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
+        "runner": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
+        "sql_io": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
+        "models": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
+        "logging_config": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
+        "config": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
+        "file_io": {"level": "DEBUG", "handlers": ["stderr", "stdout", "file"]},
         "sqlalchemy.engine.Engine": {
             "level": "WARNING",
             "formatter": "colored",
@@ -103,11 +101,12 @@ def configure_logging(cfg):
     }
     logging.config.dictConfig(logging_config)
 
-def initialize_logging(cfg):
+def initialize_logging(ndtargs, cfg):
     """
     Initialize logging for the application.
     """
     configure_logging(cfg)
     #logger.debug("NR Host Schema: %s", Host.schema())
-    #logger.debug("Passed Arguments: %s", config.ndtargs)
+    logger.critical("Passed Arguments: %s", ndtargs)
+    logger.error("Passed Arguments: %s", ndtargs)
     #logger.debug("SqlAlchemy Version: %s", sqlalchemy.__version__)

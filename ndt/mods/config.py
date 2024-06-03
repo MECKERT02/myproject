@@ -1,8 +1,11 @@
 """ NDT Runner
 """
 import argparse
+import logging
 import configparser
 from pathlib import Path
+
+logger = logging.getLogger("config")
 
 def get_parser():
     """
