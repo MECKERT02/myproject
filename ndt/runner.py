@@ -7,7 +7,8 @@ from mods import logging_config
 from ndt_crawler import ndt_crawler
 
 logger = logging.getLogger("runner")
-
+#  git config --global user.email "meckert2@madisoncollege.edu"
+#  git config --global user.name "mike eckert"
 if __name__ == '__main__':
     try:
         load_dotenv()
