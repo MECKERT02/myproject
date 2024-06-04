@@ -34,6 +34,8 @@ def get_config(args_passed):
     Returns:
         A dictionary containing the configuration values.
     """
+    #TODO: add the parsed in args to the config
+
     cfg = configparser.ConfigParser()
     config_file = construct_path('data\\config', 'config.ini')
     #print(config_file)

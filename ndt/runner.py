@@ -11,16 +11,26 @@ logger = logging.getLogger("runner")
 if __name__ == '__main__':
     try:
         load_dotenv()
+
         #TODO: add code to create dir structure if it doesnt exist
         #TODO: Create default config files
-        
+
         ndtargs = config.get_parser()
         cfg = config.get_config(ndtargs)
+
+        #TODO: move to get_config
+        #logger.debug("Command line args: %s", ndtargs)
         logcfg=logging_config.initialize_logging(cfg)
-        logger.debug("Command line args: %s", ndtargs)
         logger.debug("Logger Configuration: %s", logcfg)
         logger.debug("App Configuration: %s", cfg)
+
+        #TODO: grab more input things
         logger.info("check fo updates in %s", cfg["input_csv"])
+
+        #TODO: init the database
+
+        #TODO: launch fastapi app
+
 
         ndt_crawler(ndtargs, cfg)
     except FileNotFoundError as e:
