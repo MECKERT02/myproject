@@ -11,7 +11,7 @@ logger = logging.getLogger("runner")
 if __name__ == '__main__':
     try:
         load_dotenv()
-
+        #TODO add auth and permissions for command in api
         #TODO: add code to create dir structure if it doesnt exist
         #TODO: Create default config files
 
