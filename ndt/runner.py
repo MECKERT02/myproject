@@ -31,8 +31,13 @@ if __name__ == '__main__':
 
         #TODO: launch fastapi app
 
+        #TODO: set up nornir task scheduler
 
+        #TODO: loop?
+            #TODO: launch collection tasks
         ndt_crawler(ndtargs, cfg)
+            #TODO: store collected results
+
     except FileNotFoundError as e:
         logger.critical("File not found: %s", e)
         raise
@@ -42,3 +47,5 @@ if __name__ == '__main__':
     except Exception as e:
         logger.critical("Unhandled exception: %s", e)
         raise
+
+    #TODO: unloop and shutdown
