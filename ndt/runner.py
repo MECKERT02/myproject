@@ -20,7 +20,7 @@ if __name__ == '__main__':
         cfg = config.get_config(ndtargs)
 
         #TODO: load creds from environment and store securely for use later
-#C804-oA6C
+
         #TODO: move to get_config
         #logger.debug("Command line args: %s", ndtargs)
         logcfg=logging_config.initialize_logging(cfg)
