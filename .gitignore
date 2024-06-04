@@ -9,3 +9,5 @@ __pycache__
 **\export
 devices.csv
 devices.master.csv
+env.py
+script.py.mako
