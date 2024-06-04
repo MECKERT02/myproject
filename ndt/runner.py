@@ -30,6 +30,7 @@ if __name__ == '__main__':
         #TODO: grab more input things
         logger.info("check fo updates in %s", cfg["input_csv"])
 
+        # TODO: manage database with alembic
         #TODO: init the database
 
         #TODO: launch fastapi app
