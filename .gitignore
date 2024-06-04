@@ -6,5 +6,6 @@ __pycache__
 *.sqlite
 *.log
 **\config.ini
-**\import
 **\export
+devices.csv
+devices.master.csv
