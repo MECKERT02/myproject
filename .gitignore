@@ -2,7 +2,7 @@
 .git
 tmp.txt
 *pyc
-__pycache__
+__pycache__[*pyc]
 *.sqlite
 *.log
 **\config.ini
