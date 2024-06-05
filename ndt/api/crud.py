@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from . import models, schemas
-
+from . import schemas
+import ndt.mods.models as models
 
 def get_user(db: Session, user_id: int):
     return db.query(models.User).filter(models.User.id == user_id).first()
