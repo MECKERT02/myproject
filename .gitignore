@@ -4,6 +4,7 @@ tmp.txt
 *pyc
 __pycache__[*pyc]
 *.sqlite
+*.sqlite3
 *.log
 **\config.ini
 **\export
