@@ -34,7 +34,8 @@ if __name__ == '__main__':
         #TODO: init the database
 
         #TODO: launch fastapi app
-
+        # uvicorn ndt.api.main:app --reload
+        
         #TODO: set up nornir task scheduler
 
         #TODO: loop?
