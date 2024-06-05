@@ -33,8 +33,8 @@ if __name__ == '__main__':
         # TODO: manage database with alembic
         #TODO: init the database
 
-        #TODO: launch fastapi app
-        # uvicorn ndt.api.main:app --reload
+        #TODO: launch django app
+        # py manage.py runserver
         
         #TODO: set up nornir task scheduler
 
