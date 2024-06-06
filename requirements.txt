@@ -1,3 +1,5 @@
+# requirements.txt
+
 annotated-types==0.7.0
 anyio==4.4.0
 asgiref==3.8.1
@@ -7,6 +9,7 @@ click==8.1.7
 colorama==0.4.6
 colorlog==6.8.2
 Django==5.0.6
+django-debug-toolbar==4.4.2
 djangorestframework==3.15.1
 dnspython==2.6.1
 email_validator==2.1.1
